@@ -1,0 +1,31 @@
+.Header {
+  padding: 1rem 0 3rem;
+}
+
+.Title {
+  color: #000000;
+  font-size: 3rem;
+  text-decoration: none;
+}
+
+.Navigation {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.NavigationItem {
+  color: #999999;
+  font-size: 0.9rem;
+  margin-right: 1.3rem;
+  text-decoration: none;
+}
+
+.NavigationItem:hover {
+  color: #666666;
+}
+
+.activeNavigationItem {
+  color: #333333;
+}
