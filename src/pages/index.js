@@ -20,7 +20,7 @@ const Index = () => {
         </p>
         <p>
           <a href="https://www.youtube.com/watch?v=UGxr2tnzGS4" target="_blank">
-            Ist das der Mars?
+            Zwei noch
           </a>
         </p>
       </div>
