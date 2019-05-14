@@ -12,6 +12,7 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-react-helmet",
+
     {
       resolve: "gatsby-source-contentful",
       options: {
@@ -41,6 +42,29 @@ module.exports = {
             },
           },
         ],
+      },
+    },
+    {
+      resolve: "gatsby-source-wordpress",
+      options: {
+        baseUrl: "kaffee.travel.blog",
+        protocol: "https",
+        hostingWPCOM: true,
+        useACF: false,
+        auth: {
+          wpcom_app_clientSecret: process.env.WORDPRESS_SECRET,
+          wpcom_app_clientId: 65671,
+          wpcom_user: process.env.WORDPRESS_USERNAME,
+          wpcom_pass: process.env.WORDPRESS_PASSWORD,
+        },
+        verboseOutput: true,
+        /* searchAndReplaceContentUrls: {
+          sourceUrl: "https://kaffee.travel.blog",
+          replacementUrl:
+            "https://kaffee.travel.blog",
+        }, */
+
+        includedRoutes: ["**/posts", "**/pages", "**/tags"],
       },
     },
   ],

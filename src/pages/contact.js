@@ -17,7 +17,7 @@ const ContactPage = () => {
         <p>
           Mail uns mal: <a href="mailto:j.lutz@gingco.net">Hier</a>
         </p>
-      </Layout>{" "}
+      </Layout>
     </div>
   )
 }
