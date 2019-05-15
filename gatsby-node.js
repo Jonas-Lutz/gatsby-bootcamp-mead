@@ -7,6 +7,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
 
   // Get Path to template
   const blogTemplate = path.resolve("./src/templates/blog.js")
+  const ampBlogTemplate = path.resolve("./src/templates/blog.amp.js")
   const wpTemplate = path.resolve("./src/templates/wordpressBlog.js")
 
   // Get contentful data
@@ -31,6 +32,15 @@ module.exports.createPages = async ({ graphql, actions }) => {
         slug: edge.node.slug,
       },
     })
+
+    // AMP
+    createPage({
+      component: ampBlogTemplate,
+      path: `/blog/${edge.node.slug}/amp`,
+      context: {
+        slug: edge.node.slug,
+      },
+    })
   })
 
   // Wordpress Data
@@ -49,8 +59,6 @@ module.exports.createPages = async ({ graphql, actions }) => {
   `)
 
   const edges = wordPressResponse.data.allWordpressPost.edges
-
-  console.log(edges)
 
   edges.forEach(edge => {
     createPage({

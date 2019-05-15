@@ -23,7 +23,10 @@ const ContentfulList = props => {
       <ol className={BlogStyles.posts}>
         {posts.allContentfulBlogPost.edges.map(p => {
           return (
-            <li className={BlogStyles.post}>
+            <li
+              className={BlogStyles.post}
+              key={`${p.node.title}-${p.node.published}`}
+            >
               <Link to={`/blog/${p.node.slug}`}>
                 <h2>{p.node.title}</h2>
                 <p>{p.node.published}</p>

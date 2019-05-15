@@ -19,7 +19,11 @@ const Index = () => {
           <Link to="/contact">Gar keinen?</Link>
         </p>
         <p>
-          <a href="https://www.youtube.com/watch?v=UGxr2tnzGS4" target="_blank">
+          <a
+            href="https://www.youtube.com/watch?v=UGxr2tnzGS4"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             Zwei noch
           </a>
         </p>

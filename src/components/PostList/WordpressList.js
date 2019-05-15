@@ -23,7 +23,10 @@ const WordpressList = props => {
       <ol className={BlogStyles.posts}>
         {wpPosts.allWordpressPost.edges.map(p => {
           return (
-            <li className={BlogStyles.post}>
+            <li
+              className={BlogStyles.post}
+              key={`${p.node.title}-${p.node.date}`}
+            >
               <Link to={`/blog/${p.node.slug}`}>
                 <h2>{p.node.title}</h2>
                 <p>{p.node.date}</p>

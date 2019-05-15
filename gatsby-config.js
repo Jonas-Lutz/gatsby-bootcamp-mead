@@ -12,7 +12,6 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-react-helmet",
-
     {
       resolve: "gatsby-source-contentful",
       options: {
@@ -65,6 +64,17 @@ module.exports = {
         }, */
 
         includedRoutes: ["**/posts", "**/pages", "**/tags"],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-amp`,
+      options: {
+        canonicalBaseUrl: "https://eloquent-saha-5234d6.netlify.com",
+        components: ["amp-form"],
+        excludedPaths: ["/404*", "/"],
+        pathIdentifier: "/amp/",
+        relAmpHtmlPattern: "{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}",
+        useAmpClientIdApi: true,
       },
     },
   ],
